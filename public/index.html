@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cotizador</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>Cotizador</h1>
+    <input
+      type="text"
+      id="productSearch"
+      placeholder="Buscar producto por nombre"
+      oninput="searchProduct()"
+    />
+    <div id="products">
+      <div
+        class="product"
+        id="escobaProduct"
+        data-name="escoba"
+        data-code="001"
+      >
+        <label for="escoba"
+          >Escoba (3,500 COP) - Disponible:
+          <span id="escobaStock">50</span> unidades:
+        </label>
+        <input
+          type="number"
+          id="escoba"
+          value="0"
+          min="0"
+          max="50"
+          oninput="checkStock('escoba', 50)"
+        />
+        <span id="escobaError" class="error"></span>
+      </div>
+      <div
+        class="product"
+        id="combo904Product"
+        data-name="combo 904"
+        data-code="002"
+      >
+        <label for="combo904"
+          >Combo 904 (55,000 COP) - Disponible:
+          <span id="combo904Stock">50</span> unidades:
+        </label>
+        <input
+          type="number"
+          id="combo904"
+          value="0"
+          min="0"
+          max="50"
+          oninput="checkStock('combo904', 50)"
+        />
+        <span id="combo904Error" class="error"></span>
+      </div>
+    </div>
+    <button onclick="calculateTotal()">Calcular Total</button>
+    <h2>Total: <span id="total">0</span> COP</h2>
+    <div id="summary"></div>
+    <div id="inventory"></div>
+  </body>
+</html>
