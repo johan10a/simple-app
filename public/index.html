@@ -57,7 +57,20 @@
         <span id="combo904Error" class="error"></span>
       </div>
     </div>
-    <button onclick="calculateTotal()">Calcular Total</button>
+
+    <!-- Selección de ciudad -->
+    <label for="citySelect">Selecciona una ciudad:</label>
+    <select id="citySelect" onchange="enableCalculateButton()">
+      <option value="">Selecciona una ciudad</option>
+      <option value="cali">Cali (3,000 COP)</option>
+      <option value="palmira">Palmira (4,500 COP)</option>
+      <option value="jamundi">Jamundí (7,000 COP)</option>
+      <option value="yumbo">Yumbo (7,000 COP)</option>
+    </select>
+
+    <button id="calculateButton" onclick="calculateTotal()" disabled>
+      Calcular Total
+    </button>
     <h2>Total: <span id="total">0</span> COP</h2>
     <div id="summary"></div>
     <div id="inventory"></div>
